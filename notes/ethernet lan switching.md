@@ -281,11 +281,3 @@ You can click on any PDU and inspect Layer 2 (Ethernet) and ARP details.
 | `arp -a`             | View ARP cache                       |
 | `arp -d`             | Clear ARP cache                      |
 | `show arp` or `show ip arp` | On Cisco routers/switches     |
-
-Would you like me to explain next:
-- What happens when devices are on **different networks** (ARP for gateway)?
-- **Proxy ARP**?
-- How to observe ARP in Simulation mode with exact steps?
-- Or the difference between ARP, RARP, and Gratuitous ARP?
-
-Just tell me what you want to dive into next!
