@@ -122,3 +122,104 @@ Switch(config)# interface vlan 10
 Switch(config-if)# ip address 192.168.10.1 255.255.255.0
 Switch(config-if)# no shutdown
 
+# Switch Interface Errors – CCNA Notes
+
+## Viewing Errors
+```
+Switch# show interfaces fastethernet 0/1
+```
+This command shows a counters section with all error types.
+
+---
+
+## Error Types Explained
+
+### 1. 🔁 Runts
+- Frames **smaller than 64 bytes**
+- Usually caused by **collisions** or a faulty NIC
+- Common in **half-duplex** or **duplex mismatch** situations
+
+---
+
+### 2. 📦 Giants
+- Frames **larger than 1518 bytes**
+- Caused by a **misconfigured NIC** or faulty device
+- Can also occur with **jumbo frames** if not configured to support them
+
+---
+
+### 3. 💥 CRC Errors (Cyclic Redundancy Check)
+- Frame arrived but **failed the integrity check**
+- The data was **corrupted in transit**
+- Common causes:
+  - Bad/damaged cable
+  - EMI interference
+  - Duplex mismatch
+  - Faulty NIC or port
+
+---
+
+### 4. 🔀 Input Errors
+- A **umbrella counter** — includes runts, giants, CRC, frame, overrun, and ignored errors
+- High input errors = **physical layer problem** (Layer 1)
+
+---
+
+### 5. 🧱 Frame Errors
+- Frames with **incorrect framing format** — invalid length or alignment
+- Often caused by **duplex mismatch** or a **bad NIC**
+- Related to CRC errors but specifically about frame structure
+
+---
+
+### 6. 📤 Output Errors
+- Frames the switch **failed to transmit**
+- Can indicate **congestion**, buffer overflow, or hardware issues
+
+---
+
+### 7. 🚦 Collisions
+- Two devices transmitted **at the same time**
+- Only happen in **half-duplex** mode
+- Should be **zero** on a full-duplex link
+- If you see collisions on a full-duplex port → **duplex mismatch**
+
+---
+
+### 8. ⚡ Late Collisions
+- Collision detected **after the first 64 bytes** have been sent
+- In a properly functioning network, this should **never happen**
+- Almost always caused by:
+  - **Duplex mismatch** ← most common
+  - Cable that is **too long**
+  - Faulty NIC
+
+---
+
+### 9. 🛑 Ignored
+- Frames the switch **dropped** because the input buffer was full
+- Caused by **traffic bursts** overwhelming the interface
+
+---
+
+### 10. 🔃 Overruns / Underruns
+- **Overrun** – data arrived faster than the CPU could process it
+- **Underrun** – transmit buffer ran empty before the frame finished sending
+- Both indicate **hardware stress or high traffic load**
+
+---
+
+### 11. 🚫 Deferred
+- Switch **waited** before transmitting because the line was busy
+- Normal in **half-duplex**, should not appear in full-duplex
+
+---
+
+
+## Clearing Counters
+To reset all interface counters for a clean baseline:
+```
+Switch# clear counters fastethernet 0/1
+```
+
+---
