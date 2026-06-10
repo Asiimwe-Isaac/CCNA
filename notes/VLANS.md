@@ -1,0 +1,1 @@
+A  VLAN is a virtually local area network that logically segments a sing;e network into multiple separate broadcast domans. Devices cannot communicate directly without a layer 3 or layer two device ie switch and router.
