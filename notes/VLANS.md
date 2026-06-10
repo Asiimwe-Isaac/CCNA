@@ -16,3 +16,11 @@ SW1(config)#switch access vlan 10
 THE TWO RUNKING PROTOCOLS
 ISL- this is rarely used today.
 802.1Q- this is mostly used today where a 4 byte between the source and type. here is where the tag that helps us determine where the VLAN is from int the ethernet frame
+
+SRUCTURE OF THE 802.1 ENCAPSULATION
+
+TPID(16 bits)- Tag protocol identifier is used to show that the frame is dot 1 tagged
+PCD (3 bits)- Priority Code Point is used prioritisation 
+DEI  (1 bit) - Drop Eligible Indicator is used to mark which frames may be droppped during congestion
+VID (12 bits)- VLAN identifier used to identify which VLAN the frame belongs to like from the range (0 to 4095)
+
