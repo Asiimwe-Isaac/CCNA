@@ -47,3 +47,17 @@ SW1(config)#switch mode trunk
 TRUNK CONFIGURATIONS 
 SETTING THE NATIVE VLAN
 SW1(config-if)# switchport trunk native vlan 1001
+
+MODIFYING ALLOWED VLANs ON A TRUNK
+BY default all VLANS ARE ALLOWED (1-4094) on a trunk. so you can adjust them by restricting, add, or remove VLANS with the following commands
+
+switchport trunk allowed vlan 10,20,30  :This allows vlans 10,20,30 to be put on the trunk
+
+switchport trunk allowed vlan add v40 : This is used to add a vlan on the allowed vlans 
+
+switchport trunk allowed vlan remove 20 : This is used to remove vlan 20 from the vlan 20 from the vlans 
+
+switchport trunk allowed vlan all : This allows all vlan on the  tuunk port
+
+switchport trunk allowed vlan except 30 : This allows all VLANS except the specified ones
+
