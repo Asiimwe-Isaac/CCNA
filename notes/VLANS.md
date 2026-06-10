@@ -87,3 +87,8 @@ SW1(config-if)#switchport trunk allowed vlan 10,20,30
 
 ROUTER ON A STICK (ROAS)
 This is a method of performing inter-VLAN routing using a single physical interface on a router. The router's interface is divided into multiple logical sub interfaces, each associatd with a different VLAN. The physical link to the switch must configured as a trunk
+
+WHY USE ROAS
+Allows inter-VLAN routing with a single router interface(cost effective)
+The single physical link carries taggged traffic for all VLANS (trunk)
+Each VLAN gets its own sb-interface with its own IP address(default gateway for that VLAN)
