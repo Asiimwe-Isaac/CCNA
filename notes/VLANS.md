@@ -7,3 +7,8 @@ Reduce costs , there is no need for multiple switches
 
 ACCESS PORTS VS TRUNK PORTS
 Access ports belong to single VLANS but trunk ports are used to carry traffic from multiple VLANS between switches, here the frame is tagged inorder to to know which VLAN it is coming from
+
+BASIC ACCESS PORT CONFIGURATION
+SW1(config)# interface f0/1
+SW1(config)#switchport mode access
+SW1(config)#switch access vlan 10
