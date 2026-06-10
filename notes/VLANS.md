@@ -12,3 +12,7 @@ BASIC ACCESS PORT CONFIGURATION
 SW1(config)# interface f0/1
 SW1(config)#switchport mode access
 SW1(config)#switch access vlan 10
+
+THE TWO RUNKING PROTOCOLS
+ISL- this is rarely used today.
+802.1Q- this is mostly used today where a 4 byte between the source and type. here is where the tag that helps us determine where the VLAN is from int the ethernet frame
