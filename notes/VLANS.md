@@ -32,3 +32,14 @@ NATIVE VLAN
  the native VLAN is not tagged and when a vlan receives a frame from a vlan that is not tagged they ass ume that it is the native vlan. The native vlan is default vlan 1
 
  The the native VLAN must match on both ends on the trunk_ mismatch causes traffic issues
+
+ CONFIGURING TRUNK ENCAPSULATION
+ On switches supporting both ISL and dot1q. you must set encapsulation first, otherwise switchport mode trunk will be rejected
+
+ SW1(config)#interface g0/1
+SW1(config)#switchport trunk encapsulation dot1q
+SW1(config)#switch mode trunk
+
+On newer switches that only support dot1q, skip the encapsulation line:
+SW1(config)#interface g0/01
+SW1(config)#switch mode trunk
