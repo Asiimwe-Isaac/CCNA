@@ -111,3 +111,10 @@ R1(config-if)#no shutdown
 
 STEP 3:CREATE SUB-INTERFACES(ONE PER VLAN)
 Sub-interface numbering convention:use the VLAN ID as the sub-interface number(e.g. g0/0.10 for VLAN 10). This is not required but is standard practice
+R1(config)#interface g0/0.10
+R1(config-subif)#encapsulation dot1q 10
+R1(config-subif)#ip address 192.168.10.1 255.255.255.0
+
+R1(config)#interface g0/0.20
+R1(config-subif)#encapsulation dot1q 20
+R1(config-subif)#ip address 192.168.20.1 255.255.255.0
