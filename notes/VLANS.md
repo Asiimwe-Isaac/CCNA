@@ -27,3 +27,6 @@ VID (12 bits)- VLAN identifier used to identify which VLAN the frame belongs to 
 VID Details
 There are 4095 possible values (0 to 4095)
 VLANS 0 and 4095 are reserved - cannot be used
+
+NATIVE VLAN
+ the native VLAN is not tagged and when a vlan receives a frame from a vlan that is not tagged they ass ume that it is the native vlan. The native vlan is default vlan 1
