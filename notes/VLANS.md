@@ -118,3 +118,7 @@ R1(config-subif)#ip address 192.168.10.1 255.255.255.0
 R1(config)#interface g0/0.20
 R1(config-subif)#encapsulation dot1q 20
 R1(config-subif)#ip address 192.168.20.1 255.255.255.0
+
+R1(config)#interface g0/0.30
+R1(config-subif)#encapsulation dot1q 30
+R1(config-subif)ip address 192.168.30.1 255.255.255.0
