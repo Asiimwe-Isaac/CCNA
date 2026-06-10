@@ -61,3 +61,25 @@ switchport trunk allowed vlan all : This allows all vlan on the  tuunk port
 
 switchport trunk allowed vlan except 30 : This allows all VLANS except the specified ones
 
+VERIFICATION COMMANDS 
+
+show vlan brief : List all VLANS and their ACCESS port assignments(does not show trunk ports)
+
+show interfaces trunk : List trunk interfaces , encapsulation, native VLAN and VLANS allowed/active
+
+show interfaces g0/1 switchport : detailed switchport into a specific interface
+
+Full Example: SWITCH TRUNK CONFIGURATION
+SW1(config)#vlan 10
+SW1(config-vlan)#name SALES
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name IT
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name HR
+SW1(config-vlan)#exit
+
+SW1(config)#interface g0/1
+SW1(config-if)#switchport trunk encapsulation dot1q
+SW1(config-if)#switport mode trunk
+SW1(config-if)#switchport trunk native vlan 1001
+SW1(config-if)#switchport trunk allowed vlan 10,20,30
