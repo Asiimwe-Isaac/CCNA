@@ -43,3 +43,7 @@ SW1(config)#switch mode trunk
 On newer switches that only support dot1q, skip the encapsulation line:
 SW1(config)#interface g0/01
 SW1(config)#switch mode trunk
+
+TRUNK CONFIGURATIONS 
+SETTING THE NATIVE VLAN
+SW1(config-if)# switchport trunk native vlan 1001
