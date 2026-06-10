@@ -24,3 +24,6 @@ PCD (3 bits)- Priority Code Point is used prioritisation
 DEI  (1 bit) - Drop Eligible Indicator is used to mark which frames may be droppped during congestion
 VID (12 bits)- VLAN identifier used to identify which VLAN the frame belongs to like from the range (0 to 4095)
 
+VID Details
+There are 4095 possible values (0 to 4095)
+VLANS 0 and 4095 are reserved - cannot be used
