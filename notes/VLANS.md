@@ -92,3 +92,22 @@ WHY USE ROAS
 Allows inter-VLAN routing with a single router interface(cost effective)
 The single physical link carries taggged traffic for all VLANS (trunk)
 Each VLAN gets its own sb-interface with its own IP address(default gateway for that VLAN)
+
+ROAS Topology
+Let me give an example of a setup
+PC in VLAN10 pings PC in VLAN20. Traffic flows : PC TO SWITCH(ACCESS PORT) TO TRUNK THEN TO THE ROUTER SUB-INTERFACE Then the router routes it backdown trunkdown to swtich then to the destination PC
+
+NOTE : ONLY ONE PHYSICAL INTERFACE IS USED FOR ALL INTER VLAN TRAFFIC.
+
+ROAS Configuration - Step by Step
+Step1: Configure The Switch Side(Trunk)
+SW1(config)#interface g0/0
+SW1(config-if)# switchport trunk encapsulation dot1q
+SW1(config-if)#switchport mode trunk
+
+STEP2: ENABLE THE PHYSICAL ROUTER
+R1(config)#interface g0/0
+R1(config-if)#no shutdown
+
+STEP 3:CREATE SUB-INTERFACES(ONE PER VLAN)
+Sub-interface numbering convention:use the VLAN ID as the sub-interface number(e.g. g0/0.10 for VLAN 10). This is not required but is standard practice
